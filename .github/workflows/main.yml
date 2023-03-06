@@ -1,17 +1,17 @@
-name: Share data between jobs
+name: Cypress Tests
 
 on: [push]
 
 jobs:
-  job_1:
-    name: Add 3 and 7
+  cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
-        run: |
-          expr 3 + 7 > math-homework.txt
-      - name: Upload math result for job 1
-        uses: actions/upload-artifact@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v5.x.x # use the explicit version number
         with:
-          name: homework
-          path: math-homework.txt
+          build: npm run build
+          start: npm start
