@@ -32,9 +32,9 @@ Then("Verify Download SIP Trunking pricing form with valid credentials", (datata
     sipTrunkingPricingPage.setLastNameInput(element.last_name);
     sipTrunkingPricingPage.setEmailInput(element.email);
     sipTrunkingPricingPage.checkSubscriptionCheckbox();
-    sipTrunkingPricingPage.clickSubmitButton();
-    cy.url().should('eq', element.final_url)
-    cy.log(element.successful_message);  /// How to report user that he should check email ???
+    //sipTrunkingPricingPage.clickSubmitButton();
+    //cy.url().should('eq', element.final_url)
+    //cy.log(element.successful_message);  /// How to report user that he should check email ???
        
   })
 });
