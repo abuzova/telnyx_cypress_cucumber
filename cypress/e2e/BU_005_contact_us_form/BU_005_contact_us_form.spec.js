@@ -25,7 +25,7 @@ import contactUsFormPage from "../pages/ContactUsFormPage.spec";
             
        });
     });
-    Then("Verify contact us form with valid credentials", (datatable) => {
+    Then("Verify contact us form with valid credentials", (datatable) => {  // Need add Then block!!!1!!!!!
         /*datatable.hashes().forEach((element) => {
             searchProduct.verifyProduct(element.searchValue);
         });*/
