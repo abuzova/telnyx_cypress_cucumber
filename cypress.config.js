@@ -20,6 +20,10 @@ module.exports = defineConfig({
     },
     specPattern: "cypress/e2e/**/*.feature",
     viewportWidth: 2048,
+<<<<<<< HEAD
     viewportHeight: 1536
+=======
+    viewportHeight: 1536,
+>>>>>>> BU_007_FAQ
     }
 })
