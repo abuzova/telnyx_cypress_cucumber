@@ -28,7 +28,7 @@ class HeaderPage {
         return cy.get('header div:nth-child(3)>nav>div:nth-child(18)>a:nth-child('+ j +')');
     }
 
-    getSubMainMenuItemSolutions(){
+    getMainMenuItemSolutions(){
         return cy.get('header div:nth-child(3)>nav>a:nth-child(5)');
     }    
 
