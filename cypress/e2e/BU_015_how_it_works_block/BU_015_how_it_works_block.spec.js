@@ -32,7 +32,8 @@ import accountNotificationsPage from "../pages/AccountNotificationsPage.spec";
         cy.url().should('eq', 'https://telnyx.com/use-cases/customer-notifications-system');      
     });
 
-    Then(/^Checking correct data in How it works (\w+) subblock$/, (datatable) => { 
+    //Then(/^Checking correct data in How it works (\w+) subblock$/, (datatable) => {
+    Then("Checking correct data in How it works <number> subblock", (datatable) => { 
         //accountNotificationsPage.haveHowItWorksNumber(number.number, number.number);
         //accountNotificationsPage.haveHowItWorksTitle(number, title_of_article);
         //accountNotificationsPage.haveHowItWorksDescription(number, describe_of_article); 
