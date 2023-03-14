@@ -8,6 +8,9 @@ beforeEach(() => {
   
 });
 Given("I navigate to the Website", () => {
+    cy.clearCookies({log: true});
+    cy.clearAllSessionStorage('your item', {log: true});
+    cy.clearAllLocalStorage();
    
         // inspect the caught error
         cy.on('uncaught:exception', (e, runnable) => {
