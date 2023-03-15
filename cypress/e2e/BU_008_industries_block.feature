@@ -4,13 +4,18 @@ Background:
 Given I navigate to the Website
 Given I navigate to the Solutions page
 
+Scenario: I want to verify that link of the first article block are correct at the industries block
+When I am on the Solutions page
+Then Verify link at the industries first article block 
+|  first_articles_link     |
+|  /solutions/healthcare   |
+
 Scenario Outline: I want to verify that links are correct at the industries block
 When I am on the Solutions page
-Then Verify links at the industries block
+Then Verify links at the industries block <link> <i_number>
 Examples:
-|      link                                   |    first_articles_link    |
-|      Hello                                  |   ggggg |
-#|     /solutions/retail-and-ecommerce         |  /solutions/healthcare    | 
-#|     /solutions/logistics-and-transportation |
-#|     /solutions/travel-and-hospitality       |
-#|     /solutions/financial-services           |
+| i_number |      link                                   |
+|    1     |     /solutions/retail-and-ecommerce         |  
+|    2     |     /solutions/logistics-and-transportation | 
+|    3     |     /solutions/travel-and-hospitality       |
+|    4     |     /solutions/financial-services           | 

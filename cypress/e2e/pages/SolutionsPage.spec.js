@@ -1,4 +1,4 @@
-class Solutions{
+class SolutionsPage{
 
     getFirstArticleLink(){
         return cy.get('section[id="industries"]>div:nth-child(2) a');
@@ -8,15 +8,17 @@ class Solutions{
         return cy.get('section[id="industries"]>div:nth-child(3) div:nth-child('+ i +') a');
     }
 
-    clickFirstArticleLink(){
-        this.getFirstArticleLink().click();
+    shouldFirstArticleLink(linkArticle){
+        this.getFirstArticleLink().should('have.attr', 'href', linkArticle);
     }
 
-    clickArticleLink(i){
-        this.getItArticleLink(i).click();
+    shouldArticleLink(i, linkArticle){
+        this.getArticleLink(i).should('have.attr', 'href', linkArticle);
     }
 
 }
 
+const solutions_page = new SolutionsPage();
+export default solutions_page;
 
 

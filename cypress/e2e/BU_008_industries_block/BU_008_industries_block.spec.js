@@ -6,30 +6,29 @@ import mainMenuPage from "../pages/MainMenuPage.spec";
 Given("I navigate to the Website", () => {
       mainMenuPage.enterURL();
       mainMenuPage.closeCookies();
-      cy.log('Hello word!!!')         
+      //cy.log('Hello word!!!')         
 });
 
 Given("I navigate to the Solutions page", () => { 
     mainMenuPage.clickMainMenuItemSolutions();
     cy.wait(2000); 
-    cy.log('Hello word!!!')
+    //cy.log('Hello word!!!')
 }); 
 
 When("I am on the Solutions page", () => {
-    cy.log('Hello word!!!');
+    //cy.log('Hello word!!!');
     cy.url().should('eq', 'https://telnyx.com/solutions');
 });
 
-Then("Verify links at the industries block", (datatable) => {
-    cy.log('Hello word!!!' + datatable.element.link);
-    //datatable.hashes().forEach((element) => {
-        //cy.log(element.link) 
-        //faqPage.clickQuestionTitle(element.i_element);
-        //cy.wait(3000);
-        //faqPage.isVisibleDescriptionBlock(element.i_element);
-        //faqPage.isHiddenDescriptionBlock(element.i_element );  // check is "The description of the previous block is hidden." Should be loop
-        
-    
-    //});
+Then("Verify link at the industries first article block", (datatable) => {    
+    datatable.hashes().forEach(element => {
+        cy.log('element ' + element.first_articles_link);
+        solutionsPage.shouldFirstArticleLink(element.first_articles_link) 
+    });
+});
 
+Then(/^Verify links at the industries block ((\W\w+\W([a-z-])+)) (\w+)$/, (linkArticle, i_number) => {    
+   //cy.log('inkArticle ' + inkArticle);
+   //cy.log('i_number ' + i_number);
+   solutionsPage.shouldArticleLink(i_number, linkArticle);
 }); 
