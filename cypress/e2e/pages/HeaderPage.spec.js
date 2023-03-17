@@ -42,6 +42,10 @@ class HeaderPage {
         return cy.get('header>div>div>div>div>a:nth-child(1)');
     }
 
+    getSignUpItem(){
+        return cy.get('header>div>div>div:nth-child(4) a[id="header-sign-up"]');
+    }
+
      // Main Menu
 
     clickMainMenuItemProducts(){
@@ -73,6 +77,11 @@ class HeaderPage {
     clickContactUsMenuItem(){
         this.getContactUsMenuItem().click();
         cy.url().should('eq', 'https://telnyx.com/contact-us');
+    }
+
+    clickSignUpItem(){
+        this.getSignUpItem().click();
+        cy.url().should('eq', 'https://telnyx.com/sign-up');
     }
     
     
