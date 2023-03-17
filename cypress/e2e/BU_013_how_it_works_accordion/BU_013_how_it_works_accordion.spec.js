@@ -7,7 +7,7 @@ beforeEach(() => {
 
   
 });
-Given("I want to test the Download SIP Trunking pricing functionality", () => {   
+Given('I want to test "How it works" accordion works', () => {   
 
     mainMenuPage.enterURL();
     mainMenuPage.closeCookies();
@@ -19,7 +19,7 @@ Given("I want to test the Download SIP Trunking pricing functionality", () => {
       //cy.url().should('include', 'https://telnyx.com/products/sip-trunks')    
 });
 
-Then("Verify Download SIP Trunking pricing form with valid credentials", (datatable) => {
+Then('Verify "How it works" accordion works', (datatable) => {
 
     datatable.hashes().forEach((element) => {
         //cy.log(element.button_i); 
