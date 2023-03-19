@@ -2,7 +2,7 @@ Feature: BU_010_download_your_voice_API_eBook_form
 
 Background:
 Given I want to test the Download Your Voice API eBook functionality 					
-Scenario: I want to download pricing
+Scenario: I want to download voice API eBook
 
 Then Verify Download Your Voice API eBook form with valid credentials
 | first_name | last_name |          email         |  successful_message  |                  final_url                                                   |
