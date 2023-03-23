@@ -11,7 +11,11 @@
     "devDependencies": {
         "@badeball/cypress-cucumber-preprocessor": "^15.1.4",
         "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+<<<<<<< HEAD
         "cypress": "^12.8.1"
+=======
+        "cypress": "^12.8.0"
+>>>>>>> BU_012_resources_block
     },
     "dependencies": {
         "cosmiconfig": "^8.1.0"
