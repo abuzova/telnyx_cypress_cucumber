@@ -26,7 +26,7 @@ class MainMenuPage {
         return cy.get('header div:nth-child(3)>nav>div:nth-child(18)>a:nth-child('+ j +')');
     }
 
-    getSubMainMenuItemSolutions(){
+    getMainMenuItemSolutions(){
         return cy.get('header div:nth-child(3)>nav>a:nth-child(5)');
     }    
 
@@ -57,7 +57,11 @@ class MainMenuPage {
     clickMainMenuItemDevelopers(){
         let i = 16;
         this.getMainMenuItem(i).click({ multiple: true });
-    }   
+    }
+    
+    clickMainMenuItemSolutions(){
+        this.getMainMenuItemSolutions().click();
+    }
 
     validateMenusProducts(menu_link, i, j) {        
         this.getSubMainMenuItem(i, j).should('have.attr', 'href', menu_link);
