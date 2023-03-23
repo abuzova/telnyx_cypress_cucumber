@@ -42,8 +42,13 @@ class HeaderPage {
         return cy.get('header>div>div>div>div>a:nth-child(1)');
     }
 
+
     getLogInLink(){
         return cy.get('header>div>div>div>div>a:nth-child(2)');
+
+    }
+    getSignUpItem(){
+        return cy.get('header>div>div>div:nth-child(4) a[id="header-sign-up"]');
     }
 
      // Main Menu
@@ -79,9 +84,15 @@ class HeaderPage {
         cy.url().should('eq', 'https://telnyx.com/contact-us');
     }
 
+
     clickLogInButton(){
         this.getLogInLink().click();
         cy.url().should('eq', 'https://portal.telnyx.com/#/login/sign-in');
+    }
+
+    clickSignUpItem(){
+        this.getSignUpItem().click();
+        cy.url().should('eq', 'https://telnyx.com/sign-up');
     }
     
     
