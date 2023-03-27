@@ -2,6 +2,7 @@ Feature: BU_002_main_menu
 
 Background:
 Given I navigate to the Website
+When I am on the Home page
 
 Scenario: I want to check links in Products menu items
 Then Validate Products main menu items links 

@@ -6,9 +6,9 @@ class MissionControlPage {
         return cy.get('section:nth-child(4)>div>div>div>div>button:nth-child('+ i +')');
     }
 
-    getHowItWorksTitle(i){ 
+    /*getHowItWorksTitle(i){ 
         return cy.get('section:nth-child(4) div>button:nth-child('+ i +') h3');
-    }
+    }*/
 
     getHowItWorksDescription(i){ 
         return cy.get('section:nth-child(4) div>button:nth-child('+ i +') p');
@@ -21,10 +21,6 @@ class MissionControlPage {
     getImgBlock(i){
         return cy.get('section:nth-child(4)>div>div>div>div:nth-child('+ i +') picture img'); // 2, 3, 4, 5
     }
-
-    /*get(){
-        return cy.get('');
-    }*/
     
 
     // How It Works block
@@ -36,11 +32,6 @@ class MissionControlPage {
     }   
 
     appearedHowItWorksDescription(i){
-        /*this.getHowItWorksButton(i)
-            .should('have.attr', 'tabindex', '0')
-            .and('have.attr', 'data-state', 'active')
-            .and('have.attr', 'aria-selected', 'true');*/
-
         this.getHowItWorksDescription(i)
             .should('have.css', 'display', 'block');
     } 
@@ -49,8 +40,6 @@ class MissionControlPage {
         this.getImgBlock(i)
             .should('have.attr', 'src', imgLink);
     }
-    
-    
    
 }
 const missionControlPage = new MissionControlPage();

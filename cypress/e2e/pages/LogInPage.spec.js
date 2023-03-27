@@ -41,9 +41,7 @@ class LogInPage {
 
     clickLogInButton(){
         this.getLogInButton().click();
-    }
-
-   
+    }   
 }
 const logInPage = new LogInPage();
 export default logInPage;

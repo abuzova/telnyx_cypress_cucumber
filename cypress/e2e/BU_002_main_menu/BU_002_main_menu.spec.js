@@ -1,13 +1,15 @@
 /// <reference types="cypress" />
-import { Given, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import homePage from "../pages/HomePage.spec";
+import mainMenuPage from "../pages/MainMenuPage.spec";
 
-beforeEach(() => {
-    cy.viewport(1600, 720);
-});
 Given("I navigate to the Website", () => {
-    homePage.enterURL();
-    homePage.closeCookies();
+    mainMenuPage.enterURL();
+    mainMenuPage.closeCookies();
+});
+
+When("I am on the Home page", () => {
+    cy.url().should('eq', 'https://telnyx.com/');
 });
 
 Then("Validate Products main menu items links", (datatable) => {

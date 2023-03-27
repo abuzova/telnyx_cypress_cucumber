@@ -1,12 +1,17 @@
 /// <reference types="cypress" />
-import { Given, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import footerPage from "../pages/FooterPage.spec";
-beforeEach(() => {
-    cy.viewport(1600, 720);
+import mainMenuPage from "../pages/MainMenuPage.spec";
+
+Given('I want to navigate to telnyx.com and close cookies pop-up window', () => {
+    mainMenuPage.enterURL();
+    mainMenuPage.closeCookies();
 });
-Given("I navigate to the Website", () => {
-    footerPage.enterURL();
+
+When('I am on the "Home" page', () => {
+    cy.url().should('eq', 'https://telnyx.com/');
 });
+
 Then("Validate the links of the left footer menu item", (datatable) => {
     datatable.hashes().forEach((element) => {
         footerPage.validateLeftFooterMenuItem(element.links_menu_item_left_footer, element.i_element);

@@ -25,7 +25,6 @@ class SolutionsPage{
         this.getAccountNotificationsLink()
             .click();
     }
-
 }
 
 const solutions_page = new SolutionsPage();

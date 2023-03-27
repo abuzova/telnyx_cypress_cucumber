@@ -1,7 +1,9 @@
 Feature: BU_001_footer_menu
 
 Background:
-Given I navigate to the Website
+Given I want to navigate to telnyx.com and close cookies pop-up window
+When I am on the "Home" page
+
 Scenario: I want to validate links of the footer menu item
 Then Validate the links of the left footer menu item
 | links_menu_item_left_footer                |  i_element   |     

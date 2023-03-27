@@ -1,10 +1,9 @@
 /// <reference types="cypress" />
-import { Given, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import sipTrunkingPricingPage from "../pages/SIPTrunkingPricingPage.spec";
 import mainMenuPage from "../pages/MainMenuPage.spec";
 
-Given("I want to test the Download SIP Trunking pricing functionality", () => {
-
+Given("I want to navigate to telnyx.com and close cookies pop-up window", () => {
   // inspect the caught error
   cy.on('uncaught:exception', (e, runnable) => {
       console.log('error is', e);
@@ -18,11 +17,22 @@ Given("I want to test the Download SIP Trunking pricing functionality", () => {
   })
 
   mainMenuPage.enterURL();
-  mainMenuPage.closeCookies(); 
+  mainMenuPage.closeCookies();
+});
 
+Given('I want to open the "Pricing" dropdown menu', () => {
   mainMenuPage.clickMainMenuItemPricing();
-  cy.wait(4000);  
-  mainMenuPage.getSubMainMenuItem(7, 3).click(); // Products -> SIP Trunking
+  cy.wait(4000); 
+});
+
+Given('I want go to the "SIP Trunking pricing" page', () => {    
+  mainMenuPage.getSubMainMenuItem(7, 3).click(); // Pricing -> SIP Trunking pricing
+  cy.wait(4000);
+});
+
+When('I am on the "SIP Trunking pricing" page', () => {
+  cy.url().should('eq', 'https://telnyx.com/pricing/elastic-sip',);
+
 });
 
 Then("Verify Download SIP Trunking pricing form with valid credentials", (datatable) => {
@@ -34,7 +44,7 @@ Then("Verify Download SIP Trunking pricing form with valid credentials", (datata
     sipTrunkingPricingPage.checkSubscriptionCheckbox();
     //sipTrunkingPricingPage.clickSubmitButton();
     //cy.url().should('eq', element.final_url)
-    //cy.log(element.successful_message);  /// How to report user that he should check email ???
+    //cy.log(element.successful_message);  
        
   })
 });

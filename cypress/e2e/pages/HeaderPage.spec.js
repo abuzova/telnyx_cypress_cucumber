@@ -1,15 +1,5 @@
 class HeaderPage {
-    enterURL() {
-        cy.visit("https://telnyx.com/");
-    }   
-
-    getCloseButton(){
-        return cy.get('div[role="alertdialog"] button svg g');
-    }
-    closeCookies(){
-        this.getCloseButton().click();
-    }
-
+   
     // Main Menu
 
     getMainMenuItem(i){       

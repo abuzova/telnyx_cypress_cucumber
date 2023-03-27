@@ -35,11 +35,11 @@ class PartnershipsPage {
     }
 
     getSubscriptionCheckboxText(){
-        return cy.get('div:nth-child(2) form div[class="mktoFormRow"]>div>div>label[for="Subscription_Opt_In__c"]');
+        return cy.get('div:nth-child(2) form div[class="mktoFormRow"]>div>div>div>label[for="mktoCheckbox_12691_0"]');
     }
 
     getSubscriptionCheckbox(){
-        return cy.get('div:nth-child(2) form div[class="mktoFormRow"]>div>div>div>input[id="Subscription_Opt_In__c"]');
+        return cy.get('div:nth-child(2) form div[class="mktoFormRow"]>div>div>div>input[name="Subscription_Opt_In__c"]');
     }
 
     getApplyNowButton(){
@@ -105,7 +105,7 @@ class PartnershipsPage {
     checkSubscriptionCheckbox(){      
         this.getSubscriptionCheckboxText()
             .click();            
-        this.getSubscriptionCheckbox()
+        this.getSubscriptionCheckbox()            
             .should('be.checked');
     }
 

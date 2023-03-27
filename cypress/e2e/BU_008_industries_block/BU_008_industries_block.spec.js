@@ -5,18 +5,15 @@ import mainMenuPage from "../pages/MainMenuPage.spec";
 
 Given("I navigate to the Website", () => {
       mainMenuPage.enterURL();
-      mainMenuPage.closeCookies();
-      //cy.log('Hello word!!!')         
+      mainMenuPage.closeCookies();          
 });
 
 Given("I navigate to the Solutions page", () => { 
     mainMenuPage.clickMainMenuItemSolutions();
-    cy.wait(2000); 
-    //cy.log('Hello word!!!')
+    cy.wait(2000);    
 }); 
 
-When("I am on the Solutions page", () => {
-    //cy.log('Hello word!!!');
+When("I am on the Solutions page", () => {    
     cy.url().should('eq', 'https://telnyx.com/solutions');
 });
 
@@ -27,8 +24,6 @@ Then("Verify link at the industries first article block", (datatable) => {
     });
 });
 
-Then(/^Verify links at the industries block ((\W\w+\W([a-z-])+)) (\w+)$/, (linkArticle, i_number) => {    
-   //cy.log('inkArticle ' + inkArticle);
-   //cy.log('i_number ' + i_number);
+Then(/^Verify links at the industries block ((\W\w+\W([a-z-])+)) (\w+)$/, (linkArticle, i_number) => { 
    solutionsPage.shouldArticleLink(i_number, linkArticle);
 }); 

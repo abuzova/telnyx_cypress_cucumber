@@ -1,25 +1,12 @@
-class FAQPage {
-    enterURL() {
-        cy.visit("https://telnyx.com/");
-    }
-
-    getCloseButton(){
-        return cy.get('div[role="alertdialog"] button svg g');
-    }
-    closeCookies(){
-        this.getCloseButton().click();
-    }
+class FAQPage {   
 
     getQuestionTitle(i){
         return cy.get('main section:nth-child(12) div div:nth-child('+ i +')>button');
     }
 
     getQuestionDescription(i){
-        return cy.get('main section:nth-child(12)>div>div>div:nth-child(1)>div:nth-child(' + i + ')>div'); // main section:nth-child(12) div:nth-child(1)>div:nth-child(1)>div
+        return cy.get('main section:nth-child(12)>div>div>div:nth-child(1)>div:nth-child(' + i + ')>div'); 
     }
-    //section//div/header/strong[contains(text(), "FAQ")]/../../following-sibling::div//button  - first block
-    // 
-    // [data-state="closed"]
 
     getProductsMenuItem(){
         return cy.get('header div:nth-child(3)>nav button:nth-child(1)');
@@ -38,8 +25,7 @@ class FAQPage {
         
     }
 
-    clickQuestionTitle(i){
-        //this.getQuestionTitle(i).click({force:true});
+    clickQuestionTitle(i){    
         this.getQuestionTitle(i).click();
     }
 
@@ -47,15 +33,8 @@ class FAQPage {
         this.getQuestionDescription(i)
             .should('have.attr','data-state', 'open')
             .should('have.css','visibility', 'visible');
-    }
-
-    /*isHiddenDescriptionBlock(i){
-        this.getQuestionDescription(i)
-            .should('have.attr','data-state', 'closed')
-            .should('have.css','visibility', 'hidden');
-    }*/
-}   
-
+    }  
+}  
 
 const faqpage = new FAQPage();
 export default faqpage;

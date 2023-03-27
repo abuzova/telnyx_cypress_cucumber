@@ -2,11 +2,7 @@ class VoiceApiPage{
 
     getDownloadEbookLink(){
         return cy.get('section:nth-child(7) ul li:nth-child(2) a');
-    }
-
-    clickDownloadEbookLink(){
-        this.getDownloadEbookLink().click();        
-    }
+    }   
     
     getTitleBlock(){
         return cy.get('section:nth-child(4) header h2');
@@ -22,6 +18,10 @@ class VoiceApiPage{
 
     getDescriptionSubBlock(i){
         return cy.get('section:nth-child(4) ul li:nth-child('+ i +') p');
+    }
+
+    clickDownloadEbookLink(){
+        this.getDownloadEbookLink().click();        
     }
 
     isTitleBlock(titleArticle){

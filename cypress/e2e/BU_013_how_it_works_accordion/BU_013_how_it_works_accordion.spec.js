@@ -1,37 +1,32 @@
 /// <reference types="cypress" />
-import { Given, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import missionControlPage from "../pages/MissionControlPage.spec";
 import mainMenuPage from "../pages/MainMenuPage.spec";
-beforeEach(() => {
-    //cy.viewport(1600, 720);
 
-  
-});
-Given('I want to test "How it works" accordion works', () => {   
-
+Given('I want to navigate to telnyx.com and close cookies pop-up window', () => { 
     mainMenuPage.enterURL();
-    mainMenuPage.closeCookies();
-      
-    mainMenuPage.clickMainMenuItemWhyTelnyx();
+    mainMenuPage.closeCookies();          
+});
+
+Given('I want to open the "Why Telnyx" dropdown menu', () => {
+    mainMenuPage.clickMainMenuItemWhyTelnyx();    
+});
+
+Given('I want go to the "Mission Control" page', () => { 
     cy.wait(3000);  
-    mainMenuPage.getSubMainMenuItem(11, 3).click(); // Products -> SIP Trunking
-      //cy.wait(4000);
-      //cy.url().should('include', 'https://telnyx.com/products/sip-trunks')    
+    mainMenuPage.getSubMainMenuItem(11, 3).click(); // Why Telnyx -> Mission Control     
+});
+
+When('I am on the "Mission Control" page', () => { 
+    cy.wait(4000);
+    cy.url().should('include', 'https://telnyx.com/mission-control')    
 });
 
 Then('Verify "How it works" accordion works', (datatable) => {
-
-    datatable.hashes().forEach((element) => {
-        //cy.log(element.button_i); 
-        //cy.log(element.image_i); 
+    datatable.hashes().forEach((element) => {        
         missionControlPage.clickHowItWorksButton(element.button_i);
-        missionControlPage.appearedHowItWorksDescription(element.description_i)
-        missionControlPage.appearedImgBlock(element.image_i, element.img_link);
-        
-        //faqPage.clickQuestionTitle(element.i_element);
-        //cy.wait(3000);
-        //faqPage.isVisibleDescriptionBlock(element.i_element);
-        //faqPage.isHiddenDescriptionBlock(element.i_element );  // check is "The description of the previous block is hidden." Should be loop
+        missionControlPage.appearedHowItWorksDescription(element.description_i);
+        missionControlPage.appearedImgBlock(element.image_i, element.img_link);        
     });
 
 });

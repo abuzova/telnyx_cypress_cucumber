@@ -8,6 +8,10 @@ class EbookVoiceApiPage {
         return cy.get('div:nth-child(2) form input[id="LastName"]');
     }
 
+    getCompanyInput(){
+        return cy.get('div:nth-child(2) form input[id="Company"]');
+    }    
+
     getEmailInput(){
         return cy.get('div:nth-child(2) form input[id="Email"]');
     }
@@ -33,6 +37,11 @@ class EbookVoiceApiPage {
     setEmailInput(emailValue){
         this.getEmailInput().type(emailValue);
         this.getEmailInput().should('have.value', emailValue);
+    }
+
+    setCompanyInput(companyValue){
+        this.getCompanyInput().type(companyValue);
+        this.getCompanyInput().should('have.value', companyValue);
     }
 
     checkSubscriptionCheckbox(){      
