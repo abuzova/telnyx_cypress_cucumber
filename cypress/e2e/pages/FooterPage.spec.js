@@ -1,7 +1,12 @@
-class FooterPage {
-    enterURL() {
-        cy.visit("https://telnyx.com/");
-    }
+// https://telnyx.com/
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class FooterPage extends BasicPage {
+
+    constructor(){
+        super();
+    }    
   
     getLeftFooterMenuItem(i){
         return cy.get('footer>div:nth-child(1)>div:nth-child(2)>ul>li:nth-child('+ i +')>a');

@@ -1,4 +1,12 @@
-class ContactUsFormPage {    
+// https://telnyx.com/contact-us
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class ContactUsFormPage extends BasicPage { 
+    
+    constructor(){
+        super();
+    }
   
     getReasonForContactSelect(){
         return cy.get('section select[id="Reason_for_Contact__c"]');

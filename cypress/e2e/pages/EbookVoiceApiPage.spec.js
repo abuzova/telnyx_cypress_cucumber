@@ -1,4 +1,12 @@
-class EbookVoiceApiPage {
+// https://telnyx.com/resources/ebook-voice-api
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class EbookVoiceApiPage extends BasicPage {
+
+    constructor(){
+        super();
+    }
     
     getFirstNameInput(){
         return cy.get('div:nth-child(2) form input[id="FirstName"]');

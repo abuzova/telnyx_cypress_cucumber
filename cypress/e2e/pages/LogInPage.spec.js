@@ -1,4 +1,12 @@
-class LogInPage {
+// https://portal.telnyx.com/?_gl=1*r1d3pp*_ga*MTgyMDI4MzY4LjE2NzUwNjc5MTU.*_ga_ZPM4K1DLND*MTY4MDA0NTc0OC4xMTkuMS4xNjgwMDQ3Mjc2LjUzLjAuMA..#/login/sign-in
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class LogInPage extends BasicPage {
+
+    constructor(){
+        super();
+    }
 
     // Log in page
 

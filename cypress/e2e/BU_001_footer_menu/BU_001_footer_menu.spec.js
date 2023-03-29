@@ -1,11 +1,10 @@
 /// <reference types="cypress" />
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import footerPage from "../pages/FooterPage.spec";
-import mainMenuPage from "../pages/MainMenuPage.spec";
 
 Given('I want to navigate to telnyx.com and close cookies pop-up window', () => {
-    mainMenuPage.enterURL();
-    mainMenuPage.closeCookies();
+    footerPage.enterURL();
+    footerPage.closeCookies();
 });
 
 When('I am on the "Home" page', () => {

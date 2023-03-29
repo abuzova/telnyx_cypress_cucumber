@@ -1,4 +1,12 @@
-class VoiceApiPage{
+// https://telnyx.com/products/voice-api
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class VoiceApiPage extends BasicPage {
+
+    constructor(){
+        super();
+    }
 
     getDownloadEbookLink(){
         return cy.get('section:nth-child(7) ul li:nth-child(2) a');

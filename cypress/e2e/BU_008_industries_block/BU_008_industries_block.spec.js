@@ -1,15 +1,15 @@
 /// <reference types="cypress" />
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import solutionsPage from "../pages/SolutionsPage.spec";
-import mainMenuPage from "../pages/MainMenuPage.spec";
+import headerPage from "../pages/HeaderPage.spec";
 
 Given("I navigate to the Website", () => {
-      mainMenuPage.enterURL();
-      mainMenuPage.closeCookies();          
+    headerPage.enterURL();
+    headerPage.closeCookies();          
 });
 
 Given("I navigate to the Solutions page", () => { 
-    mainMenuPage.clickMainMenuItemSolutions();
+    headerPage.clickMainMenuItemSolutions();
     cy.wait(2000);    
 }); 
 

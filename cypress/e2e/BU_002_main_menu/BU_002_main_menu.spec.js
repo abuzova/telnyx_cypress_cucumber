@@ -1,11 +1,10 @@
 /// <reference types="cypress" />
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import homePage from "../pages/HomePage.spec";
-import mainMenuPage from "../pages/MainMenuPage.spec";
+import headerPage from "../pages/HeaderPage.spec";
 
 Given("I navigate to the Website", () => {
-    mainMenuPage.enterURL();
-    mainMenuPage.closeCookies();
+    headerPage.enterURL();
+    headerPage.closeCookies();
 });
 
 When("I am on the Home page", () => {
@@ -13,62 +12,62 @@ When("I am on the Home page", () => {
 });
 
 Then("Validate Products main menu items links", (datatable) => {
-    homePage.clickMainMenuItemProducts();
+    headerPage.clickMainMenuItemProducts();
     let j_element_products = 2;
     datatable.hashes().forEach((element) => {
-        homePage.validateMenusProducts(element.menu_link_products, j_element_products, element.i_element);
+        headerPage.validateMenusProducts(element.menu_link_products, j_element_products, element.i_element);
     });
 });
 
 Then("Validate Pricing main menu items links", (datatable) => {
-    homePage.clickMainMenuItemPricing(); 
+    headerPage.clickMainMenuItemPricing(); 
     let j_element_pricing = 7;   
     datatable.hashes().forEach((element) => {
-        homePage.validateMenusPricing(element.menu_link_pricing, j_element_pricing, element.i_element);
+        headerPage.validateMenusPricing(element.menu_link_pricing, j_element_pricing, element.i_element);
     }); 
 })
 
 Then("Validate Why Telnyx main menu items links", (datatable) => {
-    homePage.clickMainMenuItemWhyTelnyx();
+    headerPage.clickMainMenuItemWhyTelnyx();
     let j_element_why_telnyx = 11;
     datatable.hashes().forEach((element) => {
-        homePage.validateMenusWhyTelnyx(element.menu_link_why_telnyx, j_element_why_telnyx, element.i_element);
+        headerPage.validateMenusWhyTelnyx(element.menu_link_why_telnyx, j_element_why_telnyx, element.i_element);
     }); 
 })
 
 Then("Validate Resources main menu items links", (datatable) => {
-    homePage.clickMainMenuItemResources();
+    headerPage.clickMainMenuItemResources();
     
     datatable.hashes().forEach((element) => {
-        homePage.validateMenusResources(element.menu_link_resources, element.i_element);
+        headerPage.validateMenusResources(element.menu_link_resources, element.i_element);
     }); 
 })
 
 Then("Validate Developers main menu items links", (datatable) => {
-    homePage.clickMainMenuItemDevelopers();
+    headerPage.clickMainMenuItemDevelopers();
     
     datatable.hashes().forEach((element) => {
-        homePage.validateMenusDevelopers(element.menu_link_developers, element.i_element);
+        headerPage.validateMenusDevelopers(element.menu_link_developers, element.i_element);
     }); 
 })
 
 Then("Validate Solutions main menu items links", (datatable) => {    
     datatable.hashes().forEach((element) => {
-        homePage.validateMenuSolutions(element.menu_link_solutions);
+        headerPage.validateMenuSolutions(element.menu_link_solutions);
     }); 
 })
 
 Then("Validate see_all_links in Products main menu items", (datatable) => {
-    homePage.clickMainMenuItemProducts();
+    headerPage.clickMainMenuItemProducts();
     datatable.hashes().forEach((element) => {
-        homePage.validateMenuSeeAll(element.see_all_product, element.i_element);
+        headerPage.validateMenuSeeAll(element.see_all_product, element.i_element);
     }); 
 })
 
 Then("Validate see_all_links in Pricing main menu items", (datatable) => {
-    homePage.clickMainMenuItemPricing(); 
+    headerPage.clickMainMenuItemPricing(); 
     datatable.hashes().forEach((element) => {
-        homePage.validateMenuSeeAll(element.see_all_pricing, element.i_element);
+        headerPage.validateMenuSeeAll(element.see_all_pricing, element.i_element);
     }); 
 })
     

@@ -1,4 +1,12 @@
-class FAQPage {   
+// https://telnyx.com/products/sip-trunks
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class FAQPage extends BasicPage { 
+    
+    constructor(){
+        super();
+    }  
 
     getQuestionTitle(i){
         return cy.get('main section:nth-child(12) div div:nth-child('+ i +')>button');

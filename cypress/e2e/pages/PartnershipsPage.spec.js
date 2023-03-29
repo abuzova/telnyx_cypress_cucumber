@@ -1,4 +1,12 @@
-class PartnershipsPage {
+// https://telnyx.com/partnerships
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class PartnershipsPage extends BasicPage {
+
+    constructor(){
+        super();
+    }
 
     // Become a Telnyx Partner
     

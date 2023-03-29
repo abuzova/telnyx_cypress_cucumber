@@ -1,4 +1,12 @@
-class AllProductPage {    
+// https://telnyx.com/products
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class AllProductPage extends BasicPage { 
+    
+    constructor(){
+        super();
+    }
   
     getInfrastructureLink(idValue, sub_infrastructure_i, sub_sub_infrastructure_i){
         return cy.get('div[id="'+ idValue +'"]>div:nth-child(2)>div:nth-child('+ sub_infrastructure_i +')>div>a:nth-child('+ sub_sub_infrastructure_i +')');

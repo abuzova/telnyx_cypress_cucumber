@@ -1,5 +1,12 @@
-class HeaderPage {
-   
+// https://telnyx.com/
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class HeaderPage extends BasicPage{   
+    constructor(){
+        super();
+    } 
+
     // Main Menu
 
     getMainMenuItem(i){       
@@ -67,6 +74,10 @@ class HeaderPage {
         let i = 16;
         this.getMainMenuItem(i).click({ multiple: true });
     }
+
+    clickMainMenuItemSolutions(){
+        this.getMainMenuItemSolutions().click();
+    }
     
     // Top menu
     clickContactUsMenuItem(){
@@ -109,7 +120,7 @@ class HeaderPage {
     }
 
     validateMenuSolutions(menu_link) {        
-        this.getSubMainMenuItemSolutions().should('have.attr', 'href', menu_link);
+        this.getMainMenuItemSolutions().should('have.attr', 'href', menu_link);
     }  
     
     validateMenuSeeAll(menu_link, i) {        

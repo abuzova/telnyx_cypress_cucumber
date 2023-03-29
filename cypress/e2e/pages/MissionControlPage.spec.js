@@ -1,4 +1,12 @@
-class MissionControlPage {
+// https://telnyx.com/mission-control
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class MissionControlPage extends BasicPage {
+
+    constructor(){
+        super();
+    }
     
     // How It Works block
 

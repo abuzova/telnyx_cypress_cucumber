@@ -3,11 +3,10 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import headerPage from "../pages/HeaderPage.spec";
 import solutionsPage from "../pages/SolutionsPage.spec";
 import accountNotificationsPage from "../pages/AccountNotificationsPage.spec";
-import mainMenuPage from "../pages/MainMenuPage.spec";
 
     Given("I want to navigate to telnyx.com and close cookies pop-up window", () => {
-        mainMenuPage.enterURL();
-        mainMenuPage.closeCookies();                
+        headerPage.enterURL();
+        headerPage.closeCookies();                
     });
 
     Given('I want to go to the "Solutions" page', () => {

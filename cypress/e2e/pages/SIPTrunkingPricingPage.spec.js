@@ -1,4 +1,12 @@
-class SIPTrunkingPricingPage {
+// https://telnyx.com/pricing/elastic-sip
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class SIPTrunkingPricingPage extends BasicPage {
+
+    constructor(){
+        super();
+    }
     
     getFirstNameInput(){
         return cy.get('div:nth-child(2) form input[id="FirstName"]');

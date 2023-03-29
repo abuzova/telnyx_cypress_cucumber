@@ -1,4 +1,12 @@
-class RegistrationPage {
+// https://telnyx.com/sign-up
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class RegistrationPage extends BasicPage {
+
+    constructor(){
+        super();
+    }
     
     getCompanyEmailInput(){
         return cy.get('form input[id="email"]');

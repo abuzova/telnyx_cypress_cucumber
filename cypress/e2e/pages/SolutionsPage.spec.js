@@ -1,4 +1,12 @@
-class SolutionsPage{
+// https://telnyx.com/solutions
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class SolutionsPage extends BasicPage {
+
+    constructor(){
+        super();
+    }
 
     getFirstArticleLink(){
         return cy.get('section[id="industries"]>div:nth-child(2) a');

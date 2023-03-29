@@ -1,16 +1,16 @@
 /// <reference types="cypress" />
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import resourcesPage from "../pages/ResourcesPage.spec";
-import mainMenuPage from "../pages/MainMenuPage.spec";
+import headerPage from "../pages/HeaderPage.spec";
 
 Given("I want to navigate to telnyx.com and close cookies pop-up window", () => {
-      mainMenuPage.enterURL();
-      mainMenuPage.closeCookies();           
+    headerPage.enterURL();
+    headerPage.closeCookies();           
 });
 
 Given("I navigate to the SIP Trunks page", () => { 
-    mainMenuPage.clickMainMenuItemProducts();
-    mainMenuPage.getSubMainMenuItem(2, 3).click({force: true});
+    headerPage.clickMainMenuItemProducts();
+    headerPage.getSubMainMenuItem(2, 3).click({force: true});
     cy.wait(2000);   
 }); 
 

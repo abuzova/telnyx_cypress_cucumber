@@ -1,4 +1,12 @@
-class ResourcesPage {  
+// https://telnyx.com/products/sip-trunks
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class ResourcesPage extends BasicPage { 
+    
+    constructor(){
+        super();
+    }
 
     getStartBuildingTabs(i){       
         return cy.get('section:nth-child(7) div:nth-child(4) button:nth-child('+ i +')');

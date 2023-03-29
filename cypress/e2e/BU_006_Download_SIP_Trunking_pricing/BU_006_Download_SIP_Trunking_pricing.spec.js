@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import sipTrunkingPricingPage from "../pages/SIPTrunkingPricingPage.spec";
-import mainMenuPage from "../pages/MainMenuPage.spec";
+import headerPage from "../pages/HeaderPage.spec";
 
 Given("I want to navigate to telnyx.com and close cookies pop-up window", () => {
   // inspect the caught error
@@ -16,17 +16,17 @@ Given("I want to navigate to telnyx.com and close cookies pop-up window", () => 
       // on any other error message the test fails
   })
 
-  mainMenuPage.enterURL();
-  mainMenuPage.closeCookies();
+  headerPage.enterURL();
+  headerPage.closeCookies();
 });
 
 Given('I want to open the "Pricing" dropdown menu', () => {
-  mainMenuPage.clickMainMenuItemPricing();
+  headerPage.clickMainMenuItemPricing();
   cy.wait(4000); 
 });
 
 Given('I want go to the "SIP Trunking pricing" page', () => {    
-  mainMenuPage.getSubMainMenuItem(7, 3).click(); // Pricing -> SIP Trunking pricing
+  headerPage.getSubMainMenuItem(7, 3).click(); // Pricing -> SIP Trunking pricing
   cy.wait(4000);
 });
 

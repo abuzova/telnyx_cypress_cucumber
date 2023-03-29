@@ -1,4 +1,12 @@
-class AccountNotificationsPage {    
+// https://telnyx.com/use-cases/customer-notifications-system
+
+import BasicPage from "../pages/BasicPage.spec";
+
+class AccountNotificationsPage extends BasicPage {
+    
+    constructor(){
+        super();
+    }
   
     getHowItWorksNumber(i){
         return cy.get('section ol>li:nth-child('+ i +') strong ');
