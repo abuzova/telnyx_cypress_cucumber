@@ -1,17 +1,18 @@
 // https://telnyx.com/products/voice-api
 
-import BasicPage from "../pages/BasicPage.spec";
+import TextBlockPage from "../pages/TextBlockPage.spec";
 
-class VoiceApiPage extends BasicPage {
+class VoiceApiPage extends TextBlockPage {
 
     constructor(){
         super();
+        this.tagName = 'ul';
     }
 
     getDownloadEbookLink(){
         return cy.get('section:nth-child(7) ul li:nth-child(2) a');
-    }   
-    
+    }
+
     getTitleBlock(){
         return cy.get('section:nth-child(4) header h2');
     }
@@ -20,38 +21,19 @@ class VoiceApiPage extends BasicPage {
         return cy.get('section:nth-child(4) header p');
     }
 
-    getTitleSubBlock(i){
-        return cy.get('section:nth-child(4) ul li:nth-child('+ i +') h3');
-    }
-
-    getDescriptionSubBlock(i){
-        return cy.get('section:nth-child(4) ul li:nth-child('+ i +') p');
-    }
-
     clickDownloadEbookLink(){
         this.getDownloadEbookLink().click();        
-    }
+    } 
 
-    isTitleBlock(titleArticle){
+    haveTitleBlock(titleArticle){
         this.getTitleBlock()
             .should('have.text', titleArticle)
     }
 
-    isDescriptionBlock(describeArticle){
+    haveDescriptionBlock(describeArticle){
         this.getDescriptionBlock()
             .should('have.text', describeArticle)
     }
-
-    isTitleSubBlock(i, titleArticle){
-        this.getTitleSubBlock(i)
-            .should('have.text', titleArticle)
-    }
-
-    isDescriptionSubBlock(i, describeArticle){
-        this.getDescriptionSubBlock(i)
-            .should('have.text', describeArticle)
-    }
-    
 }
 
 const  voiceApiPage = new VoiceApiPage();

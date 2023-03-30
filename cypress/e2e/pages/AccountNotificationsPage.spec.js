@@ -1,40 +1,22 @@
 // https://telnyx.com/use-cases/customer-notifications-system
 
-import BasicPage from "../pages/BasicPage.spec";
+import TextBlockPage from "../pages/TextBlockPage.spec";
 
-class AccountNotificationsPage extends BasicPage {
+class AccountNotificationsPage extends TextBlockPage {
     
     constructor(){
         super();
+        this.tagName = 'ol';
+    }
+    
+    getNumberBlock(i){
+        return cy.get('section '+ this.tagName +'>li:nth-child('+ i +') strong ');
     }
   
-    getHowItWorksNumber(i){
-        return cy.get('section ol>li:nth-child('+ i +') strong ');
-    }
-
-    getHowItWorksTitle(i){
-        return cy.get('section ol>li:nth-child('+ i +') h3');
-    }
-
-    getHowItWorksDescription(i){
-        return cy.get('section ol>li:nth-child('+ i +') p');
-    }
-
-    haveHowItWorksNumber(i, numberValue){
-        this.getHowItWorksNumber(i)
+    haveNumberBlock(i, numberValue){
+        this.getNumberBlock(i)
             .should('have.text', numberValue);
     }
-
-    haveHowItWorksTitle(i, titleValue){
-        this.getHowItWorksTitle(i)
-            .should('have.text', titleValue);
-    }
-
-    haveHowItWorksDescription(i, descriptionValue){
-        this.getHowItWorksDescription(i)
-            .should('have.text', descriptionValue);
-    }
-
 }
 
 const accountNotificationsPage = new AccountNotificationsPage();

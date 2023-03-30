@@ -24,8 +24,8 @@ When('I am on the "Mission Control" page', () => {
 
 Then('Verify "How it works" accordion works', (datatable) => {
     datatable.hashes().forEach((element) => {        
-        missionControlPage.clickHowItWorksButton(element.button_i);
-        missionControlPage.appearedHowItWorksDescription(element.description_i);
+        missionControlPage.clickTitleAccordionBlock(element.button_i);
+        missionControlPage.isVisibleDescriptionAccordionBlock(element.description_i);
         missionControlPage.appearedImgBlock(element.image_i, element.img_link);        
     });
 

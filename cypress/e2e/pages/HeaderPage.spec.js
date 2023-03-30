@@ -85,7 +85,6 @@ class HeaderPage extends BasicPage{
         cy.url().should('eq', 'https://telnyx.com/contact-us');
     }
 
-
     clickLogInButton(){
         this.getLogInLink().click();
         cy.url().should('eq', 'https://portal.telnyx.com/#/login/sign-in');

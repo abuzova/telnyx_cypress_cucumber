@@ -15,7 +15,6 @@ class SolutionsPage extends BasicPage {
     getArticleLink(i){
         return cy.get('section[id="industries"]>div:nth-child(3) div:nth-child('+ i +') a');
     }
-
     
     getAccountNotificationsLink(){
         return cy.xpath("//ul/li//h3[contains(text(), 'Account notifications')]/./following-sibling::div/a");

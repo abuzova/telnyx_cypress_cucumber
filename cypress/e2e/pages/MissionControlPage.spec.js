@@ -1,8 +1,8 @@
 // https://telnyx.com/mission-control
 
-import BasicPage from "../pages/BasicPage.spec";
+import AccordionPage from "../pages/AccordionPage.spec";
 
-class MissionControlPage extends BasicPage {
+class MissionControlPage extends AccordionPage {
 
     constructor(){
         super();
@@ -10,15 +10,11 @@ class MissionControlPage extends BasicPage {
     
     // How It Works block
 
-    getHowItWorksButton(i){       
+    getTitleAccordionBlock(i){       
         return cy.get('section:nth-child(4)>div>div>div>div>button:nth-child('+ i +')');
-    }
+    }   
 
-    /*getHowItWorksTitle(i){ 
-        return cy.get('section:nth-child(4) div>button:nth-child('+ i +') h3');
-    }*/
-
-    getHowItWorksDescription(i){ 
+    getDescriptionAccordionBlock(i){ 
         return cy.get('section:nth-child(4) div>button:nth-child('+ i +') p');
     }
 
@@ -33,14 +29,14 @@ class MissionControlPage extends BasicPage {
 
     // How It Works block
 
-    clickHowItWorksButton(i){
+    clickTitleAccordionBlock(i){
         cy.get('section:nth-child(4)').scrollIntoView();        
         cy.wait(3000);
-        this.getHowItWorksButton(i).click();       
+        this.getTitleAccordionBlock(i).click();       
     }   
 
-    appearedHowItWorksDescription(i){
-        this.getHowItWorksDescription(i)
+    isVisibleDescriptionAccordionBlock(i){
+        this.getDescriptionAccordionBlock(i)
             .should('have.css', 'display', 'block');
     } 
 

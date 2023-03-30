@@ -33,7 +33,7 @@ import accountNotificationsPage from "../pages/AccountNotificationsPage.spec";
     });  
 
     Then("Checking correct data in How it works subblock. Number: {string}, title of the article: {string}, description of the article: {string}", (number, title_of_article, describe_of_article) => {
-        accountNotificationsPage.haveHowItWorksNumber(number, number);
-        accountNotificationsPage.haveHowItWorksTitle(number, title_of_article);
-        accountNotificationsPage.haveHowItWorksDescription(number, describe_of_article);
+        accountNotificationsPage.haveNumberBlock(number, number);
+        accountNotificationsPage.haveTitleSubBlock(number, title_of_article);
+        accountNotificationsPage.haveDescriptionSubBlock(number, describe_of_article);
     });

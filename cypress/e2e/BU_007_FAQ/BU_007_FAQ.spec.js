@@ -36,8 +36,8 @@ When('I am on the "SIP Trunking" page', () => {
 
 Then("Validate Frequently Asked Questions block work", (datatable) => {
     datatable.hashes().forEach((element) => { 
-        faqPage.clickQuestionTitle(element.i_element);
+        faqPage.clickTitleAccordionBlock(element.i_element);
         cy.wait(3000);
-        faqPage.isVisibleDescriptionBlock(element.i_element);   
+        faqPage.isVisibleDescriptionAccordionBlock(element.i_element);   
     });
 });

@@ -22,12 +22,12 @@ When('I am on the "Voice API" page', () => {
   
 Then("Validate FEATURES title block data", (datatable) => {
     datatable.hashes().forEach((element) => {
-        voiceApiPage.isTitleBlock(element.title_of_article);
-        voiceApiPage.isDescriptionBlock(element.describe_of_article);              
+        voiceApiPage.haveTitleBlock(element.title_of_article);
+        voiceApiPage.haveDescriptionBlock(element.describe_of_article);              
     });
 });
   
 Then("Validate FEATURES subblock data. Number: {string}, title of the article: {string}, description of the article: {string}", (number, title_of_article, describe_of_article) => { 
-    voiceApiPage.isTitleSubBlock(number, title_of_article);
-    voiceApiPage.isDescriptionSubBlock(number, describe_of_article);       
+    voiceApiPage.haveTitleSubBlock(number, title_of_article);
+    voiceApiPage.haveDescriptionSubBlock(number, describe_of_article);       
 });
