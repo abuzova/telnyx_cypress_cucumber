@@ -25,7 +25,7 @@ When("I am on the Ebook voice api page", () => {
 
 Then("Verify Download Your Voice API eBook form with valid credentials", (datatable) => {  
   datatable.hashes().forEach((element) => {
-    ebookVoiceApiPage.setFirstNameInput(element.first_name);
+    ebookVoiceApiPage.setNameInput(element.first_name);
     ebookVoiceApiPage.setLastNameInput(element.last_name);
     ebookVoiceApiPage.setEmailInput(element.email);
     ebookVoiceApiPage.setCompanyInput(element.company)

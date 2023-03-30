@@ -218,6 +218,8 @@ class GetPage extends BasicPage{
     // MainMenuPage.spec
     // MissionControlPage.spec
     // ResourcesPage.spec
+    // SolutionsPage.spec
+    // VoiceApiPage.spec
 
     // Main Menu
     // Top menu

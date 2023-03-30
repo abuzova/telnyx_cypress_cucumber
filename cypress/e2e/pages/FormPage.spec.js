@@ -1,249 +1,69 @@
 import BasicPage from "../pages/BasicPage.spec";
 
 class FormPage extends BasicPage{
-              
-    // Input 
 
-    getFirstNameInput(){
-    }
+    constructor(){
+        super();
+        this.idName = "FirstName";
+        this.lastName = "LastName";
+    };
+              
+    // get   
+    
+    getNameInput(){
+      return cy.get('div:nth-child(2) form input[id='+ this.idName +']');
+    };
 
     getLastNameInput(){
-    }
-
-    getFullNameInput(){
-    } 
-
-    getLoginInput(){
-    }    
+      return cy.get('div:nth-child(2) form input[id='+ this.lastName +']');
+    }  
 
     getEmailInput(){
-    }
+      return cy.get('div:nth-child(2) form input[id="Email"]');
+    } 
     
-    getCompanyEmailInput(){
-    }
     
-    getPasswordInput(){       
-    }
-
-    getPhoneNumberBaseInput(){
-    }
-
-    getWebsiteInput(){
-    }
-
-    getFormAdditionalInformationInput(){
-    }
-
-    getCompanyInput(){
-    }
-
-    getAdditionalInformationInput(){
-    }
-
-    // Select
-
-    getReasonForContactSelect(){
-    }
-
-    getPhoneNumberExtensionSelect(){
-    }   
-
-    getUseCaseFormSelect(){
-    }
-
-    getPartnerTypeSelect(){
-    }
-
-    chooseReasonForContactSelect(){
-    }
-
-    // Checkbox
-
-    getSubscriptionOptCheckbox(){
-    }
-    
-    getRememberEmailCheckbox(){
-    }
-
     getSubscriptionCheckbox(){
-    }
-
-    getTermsAndConditionsCheckbox(){
-    }
-
-    getSubscriptionCheckboxText(){
-    } 
-    
-    // Lable
-
-    getRememberEmailLable(){
-    }
-
-   // Link 
-
-    getFirstArticleLink(){
-    }
-  
-    getArticleLink(){
-    }  
-  
-    getAccountNotificationsLink(){
-    }
-
-    getDownloadEbookLink(){
-    } 
-    
-    // Block
-  
-    getTitleBlock(){
-    }
-  
-    getDescriptionBlock(){
-    }
-  
-    getTitleSubBlock(){
-    }
-  
-    getDescriptionSubBlock(){
-    }
-
-    // Buttons
-
-    getSignUpButton(){
-    }
-
-    getApplyNowButton(){
-    }
-
-    getLogInButton(){
+      return cy.get('div:nth-child(2) form input[name="Subscription_Opt_In__c"][type="checkbox"]');
     }
 
     getSubmitButton(){
-    }
-
-    // set Input
-
-    setFirstNameInput(){
-    }
-
-    setLastNameInput(){
-    }
-
-    setEmailInput(){
-    }
-
-    setLoginInput(){
-    }
-
-    setCompanyInput(){
-    }
-
-    setPasswordInput(){
-    }
-
-    setPhoneNumberBaseInput(){
-    }
-
-    setWebsiteInput(){
-    }
-
-    setFormAdditionalInformationInput(){
+      return cy.get('div:nth-child(2) form button');
     } 
 
-    setAdditionalInformationInput(){
+    // set 
+
+    setNameInput(nameValue){
+      this.getNameInput()
+          .clear()
+          .type(nameValue);        
+      this.getNameInput().should('have.value', nameValue)
     }
 
-    setCompanyEmailInput(){
+    setLastNameInput(lastNameValue){
+      this.getLastNameInput()
+          .clear()
+          .type(lastNameValue);
+      this.getLastNameInput().should('have.value', lastNameValue);
     }
-  
-    setFullNameInput(){
+
+    setEmailInput(emailValue){
+      this.getEmailInput()
+        .clear()
+        .type(emailValue);
+      this.getEmailInput().should('have.value', emailValue);
+    } 
+
+    checkSubscriptionCheckbox(){      
+      this.getSubscriptionCheckbox()
+          .check()
+          .should('be.checked');
     }   
-
-
-    // choose Select
-
-    choosePhoneNumberExtensionSelect(){
-    }  
-
-    chooseUseCaseFormSelect(){       
-    }
-
-    setPhoneNumberExtensionSelect(){ 
-    }
-   
-    setPartnerTypeSelect(){ 
-    }
-
-  // check Checkbox
-
-    checkSubscriptionOptCheckbox(){
-    }
-
-  // click Button 
-
-    clickSubmitButton(){
-    }
-
-    clickSignUpButton(){
-    }
-
-    clickApplyNowButton(){
-    }
-     
-  // click Checkbox
-
-    clickRememberEmailCheckbox(){
-    }    
-
-    checkSubscriptionCheckbox(){ 
-    }
-
-    checkTermsAndConditionsCheckbox(){
-    }
-
-    // should Link
-
-    shouldFirstArticleLink(){
-    }
-
-    shouldArticleLink(){
-    }
-
-    // click Link
-
-    clickAccountNotificationsLink(){
-    }  
-
-  
-    clickDownloadEbookLink(){       
-    }
-
-    // is Block
-
-    isTitleBlock(){
-    }
-
-    isDescriptionBlock(){
-    }
-
-    isTitleSubBlock(){
-    }
-
-    isDescriptionSubBlock(){
-    }    
     
-    // ContactUsFormPage.spec
-    // LogInPage.spec
-    // Log in page
-    // EbookVoiceApiPage.spec
-    // RegistrationPage.spec
-    // PartnershipsPage.spec  
-    // Become a Telnyx Partner
-    // SolutionsPage.spec
-    // VoiceApiPage.spec
-    // SIPTrunkingPricingPage.spec   
-
+    clickSubmitButton(){
+      this.getSubmitButton().click();
+    }
+    
 }
-
-const formPage = new FormPage();
-export default formPage;
+ 
+export default FormPage;

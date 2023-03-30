@@ -21,7 +21,7 @@ When('I am on the "Partnerships" page', () => {
 
 Then("Validate Become a Telnyx partner form with correct data", (datatable) => {
     datatable.hashes().forEach((element) => {                
-        partnershipsPage.setFirstNameInput(element.firstName);
+        partnershipsPage.setNameInput(element.firstName);
         partnershipsPage.setLastNameInput(element.lastName);
         partnershipsPage.setCompanyInput(element.company);
         partnershipsPage.setEmailInput(element.email);
@@ -31,6 +31,6 @@ Then("Validate Become a Telnyx partner form with correct data", (datatable) => {
         partnershipsPage.setAdditionalInformationInput(element.additionalInformation);
         //cy.wait(3000);
         partnershipsPage.checkSubscriptionCheckbox();
-        //partnershipsPage.clickApplyNowButton();
+        //partnershipsPage.clickSubmitButton();
     });
 });

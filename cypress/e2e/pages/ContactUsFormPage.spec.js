@@ -1,8 +1,8 @@
 // https://telnyx.com/contact-us
 
-import BasicPage from "../pages/BasicPage.spec";
+import FormPage from "../pages/FormPage.spec";
 
-class ContactUsFormPage extends BasicPage { 
+class ContactUsFormPage extends FormPage { 
     
     constructor(){
         super();
@@ -10,18 +10,6 @@ class ContactUsFormPage extends BasicPage {
   
     getReasonForContactSelect(){
         return cy.get('section select[id="Reason_for_Contact__c"]');
-    }
-
-    getFirstNameInput(){
-        return cy.get('form input[id="FirstName"]');
-    }
-
-    getLastNameInput(){
-        return cy.get('form input[id="LastName"]');
-    }
-
-    getEmailInput(){
-        return cy.get('form input[id="Email"]');
     }
 
     getPhoneNumberExtensionSelect(){
@@ -40,15 +28,11 @@ class ContactUsFormPage extends BasicPage {
         return cy.get('select[id="Use_Case_Form__c"]');
     }
 
-    getFormAdditionalInformationInput(){
+    getAdditionalInformationInput() {
         return cy.get('form textarea[id="Form_Additional_Information__c"]');
-    }
+    }   
 
-    getSubscriptionOptCheckbox(){
-        return cy.get('input[name="Subscription_Opt_In__c"]');
-    }
-
-    getSubmitButton(){
+    getSubmitButton(){ 
         return cy.get('form button');
     }
 
@@ -56,25 +40,7 @@ class ContactUsFormPage extends BasicPage {
         this.getReasonForContactSelect()
             .select(reasonValue)
             .should('have.value', reasonValue)
-    }
-
-    setFirstNameInput(firstNameValue){
-        this.getFirstNameInput()
-            .type(firstNameValue)
-            .should('have.value', firstNameValue)
-    }
-
-    setLastNameInput(lastNameValue){
-        this.getLastNameInput()
-            .type(lastNameValue)
-            .should('have.value', lastNameValue);
-    }
-
-    setEmailInput(emailValue){
-        this.getEmailInput()
-            .type(emailValue)
-            .should('have.value', emailValue);
-    }
+    } 
 
     choosePhoneNumberExtensionSelect(phoneNumberExtensionValue){
         this.getPhoneNumberExtensionSelect()
@@ -100,20 +66,10 @@ class ContactUsFormPage extends BasicPage {
             .should('have.value', useCaseFormValue);        
     }
 
-    setFormAdditionalInformationInput(additionalInformationValue){
-        this.getFormAdditionalInformationInput()
+    setAdditionalInformationInput(additionalInformationValue){
+        this.getAdditionalInformationInput()
             .type(additionalInformationValue)
             .should('have.value', additionalInformationValue);
-    } 
-
-    checkSubscriptionOptCheckbox(){
-        this.getSubscriptionOptCheckbox()
-            .check()
-            .should('be.checked');
-    }
-
-    clickSubmitButton(){
-        this.getSubmitButton().click();
     }
 }
 

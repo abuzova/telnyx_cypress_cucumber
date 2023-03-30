@@ -25,9 +25,9 @@ When('I am on the "Sign in" page', () => {
 Then("Validate login form with correct credentials", (datatable) => {
     datatable.hashes().forEach((element) => {               
         cy.wait(3000);
-        logInPage.setLoginInput(element.business_email);
+        logInPage.setEmailInput(element.business_email);
         logInPage.setPasswordInput(element.password);
-        logInPage.clickRememberEmailCheckbox();
-        //logInPage.clickLogInButton();
+        logInPage.clickSubscriptionCheckbox();
+        //logInPage.clickSubmitButton();
     });
 });

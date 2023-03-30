@@ -1,29 +1,17 @@
 // https://telnyx.com/partnerships
 
-import BasicPage from "../pages/BasicPage.spec";
+import FormPage from "../pages/FormPage.spec";
 
-class PartnershipsPage extends BasicPage {
+class PartnershipsPage extends FormPage {
 
     constructor(){
         super();
     }
 
     // Become a Telnyx Partner
-    
-    getFirstNameInput(){
-        return cy.get('div:nth-child(2) form input[id="FirstName"]');
-    }
-
-    getLastNameInput(){
-        return cy.get('div:nth-child(2) form input[id="LastName"]');
-    }
 
     getCompanyInput(){
         return cy.get('div:nth-child(2) form input[id="Company"]');
-    }
-
-    getEmailInput(){
-        return cy.get('div:nth-child(2) form input[id="Email"]');
     }
 
     getPhoneNumberExtensionSelect(){
@@ -44,31 +32,9 @@ class PartnershipsPage extends BasicPage {
 
     getSubscriptionCheckboxText(){
         return cy.get('div:nth-child(2) form div[class="mktoFormRow"]>div>div>div>label[for="mktoCheckbox_12691_0"]');
-    }
-
-    getSubscriptionCheckbox(){
-        return cy.get('div:nth-child(2) form div[class="mktoFormRow"]>div>div>div>input[name="Subscription_Opt_In__c"]');
-    }
-
-    getApplyNowButton(){
-        return cy.get('div:nth-child(2) form button');
-    }
+    }     
 
     // Become a Telnyx Partner
-
-    setFirstNameInput(firstNameValue){
-        this.getFirstNameInput()
-            .clear()
-            .type(firstNameValue);        
-        this.getFirstNameInput().should('have.value', firstNameValue)
-    }
-
-    setLastNameInput(lastNameValue){
-        this.getLastNameInput()
-            .clear()
-            .type(lastNameValue);
-        this.getLastNameInput().should('have.value', lastNameValue);
-    }
 
     setCompanyInput(companyValue){
         this.getCompanyInput()
@@ -77,18 +43,10 @@ class PartnershipsPage extends BasicPage {
         this.getCompanyInput().should('have.value', companyValue);
     }
 
-    setEmailInput(emailValue){
-        this.getEmailInput()
-            .clear()   
-            .type(emailValue);
-        this.getEmailInput().should('have.value', emailValue);
-    }
-
     setPhoneNumberExtensionSelect(phoneNumberExtensionValue){ 
         this.getPhoneNumberExtensionSelect().select(phoneNumberExtensionValue);
         this.getPhoneNumberExtensionSelect().should('have.value', phoneNumberExtensionValue);
     }
-
 
     setPhoneNumberBaseInput(phoneNumberBaseValue){
         this.getPhoneNumberBaseInput()
@@ -108,18 +66,7 @@ class PartnershipsPage extends BasicPage {
             .clear()
             .type(additionalInformatioValue);
         this.getAdditionalInformationInput().should('have.value', additionalInformatioValue);
-    }
-
-    checkSubscriptionCheckbox(){      
-        this.getSubscriptionCheckboxText()
-            .click();            
-        this.getSubscriptionCheckbox()            
-            .should('be.checked');
-    }
-
-    clickApplyNowButton(){
-        this.getApplyNowButton().click();
-    }
+    } 
 }
     const partnershipsPage = new PartnershipsPage();
     export default partnershipsPage;

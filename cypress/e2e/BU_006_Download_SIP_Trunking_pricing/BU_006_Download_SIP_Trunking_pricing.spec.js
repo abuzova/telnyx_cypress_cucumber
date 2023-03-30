@@ -38,7 +38,7 @@ When('I am on the "SIP Trunking pricing" page', () => {
 Then("Verify Download SIP Trunking pricing form with valid credentials", (datatable) => {
   
   datatable.hashes().forEach((element) => {
-    sipTrunkingPricingPage.setFirstNameInput(element.first_name);
+    sipTrunkingPricingPage.setNameInput(element.first_name);
     sipTrunkingPricingPage.setLastNameInput(element.last_name);
     sipTrunkingPricingPage.setEmailInput(element.email);
     sipTrunkingPricingPage.checkSubscriptionCheckbox();

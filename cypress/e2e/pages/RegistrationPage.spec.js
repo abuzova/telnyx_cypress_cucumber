@@ -1,20 +1,21 @@
 // https://telnyx.com/sign-up
 
-import BasicPage from "../pages/BasicPage.spec";
+import FormPage from "../pages/FormPage.spec";
 
-class RegistrationPage extends BasicPage {
+class RegistrationPage extends FormPage {
 
     constructor(){
         super();
-    }
+        this.idName = "full_name";
+    };
     
-    getCompanyEmailInput(){
+    getEmailInput(){
         return cy.get('form input[id="email"]');
-    }
+    } 
    
-    getFullNameInput(){
-        return cy.get('form input[id="full_name"]');
-    }   
+    getNameInput(){
+        return cy.get('div:nth-child(2) form input[id='+ this.idName +']');
+    }  
 
     getPasswordInput(){
         return cy.get('form input[id="password"]');
@@ -24,30 +25,13 @@ class RegistrationPage extends BasicPage {
         return cy.get('form input[id="terms_and_conditions"]');
     }
 
-    /*getTermsAndConditionsLable(){
-        return cy.get('form label[for="terms_and_conditions"]');
-    }*/
     getSubscriptionCheckbox(){
         return cy.get('form input[id="subscription_opt_in"]');
     }
-
-    /*getSubscriptionLable(){
-        return cy.get('form label[for="subscription_opt_in"]');
-    }*/
-    
-    getSignUpButton(){
+   
+    getSubmitButton(){ 
         return cy.get('form button[type="submit"]:nth-child(7)');
-    }    
-
-    setCompanyEmailInput(companyEmailValue){
-        this.getCompanyEmailInput().type(companyEmailValue);
-        this.getCompanyEmailInput().should('have.value', companyEmailValue);
-    }
-
-    setFullNameInput(fullNameValue){
-        this.getFullNameInput().type(fullNameValue);        
-        this.getFullNameInput().should('have.value', fullNameValue)
-    }
+    } 
 
     setPasswordInput(passwordValue){
         this.getPasswordInput().type(passwordValue);
@@ -58,16 +42,6 @@ class RegistrationPage extends BasicPage {
         this.getTermsAndConditionsCheckbox()
             .check()        
             .should('be.checked');
-    }
-
-    checkSubscriptionCheckbox(){      
-        this.getSubscriptionCheckbox()
-            .check()
-            .should('be.checked');
-    }
-
-    clickSignUpButton(){
-        this.getSignUpButton().click();
     }
 }
 

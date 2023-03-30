@@ -21,12 +21,12 @@ Then("Validate Registration form with correct data", (datatable) => {
 
     datatable.hashes().forEach((element) => {      
         cy.wait(3000);
-        registrationPage.setCompanyEmailInput(element.company_email);
-        registrationPage.setFullNameInput(element.full_name);
+        registrationPage.setEmailInput(element.company_email);
+        registrationPage.setNameInput(element.full_name);
         registrationPage.setPasswordInput(element.password);
         registrationPage.checkTermsAndConditionsCheckbox();
         registrationPage.checkSubscriptionCheckbox();
-        //registrationPage.clickSignUpButton();       
+        //registrationPage.clickSubmitButton();       
     });
 
 });
