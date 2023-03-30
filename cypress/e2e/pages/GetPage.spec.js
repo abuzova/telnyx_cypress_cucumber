@@ -1,6 +1,7 @@
 import BasicPage from "../pages/BasicPage.spec";
 
 class GetPage extends BasicPage{  
+    
     // get
         
     getHowItWorksNumber(){
