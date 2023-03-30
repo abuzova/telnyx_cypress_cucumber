@@ -6,9 +6,7 @@ class FormPage extends BasicPage{
         super();
         this.idName = "FirstName";
         this.lastName = "LastName";
-    };
-              
-    // get   
+    };  
     
     getNameInput(){
       return cy.get('div:nth-child(2) form input[id='+ this.idName +']');
@@ -20,8 +18,7 @@ class FormPage extends BasicPage{
 
     getEmailInput(){
       return cy.get('div:nth-child(2) form input[id="Email"]');
-    } 
-    
+    }    
     
     getSubscriptionCheckbox(){
       return cy.get('div:nth-child(2) form input[name="Subscription_Opt_In__c"][type="checkbox"]');
@@ -29,9 +26,7 @@ class FormPage extends BasicPage{
 
     getSubmitButton(){
       return cy.get('div:nth-child(2) form button');
-    } 
-
-    // set 
+    }  
 
     setNameInput(nameValue){
       this.getNameInput()

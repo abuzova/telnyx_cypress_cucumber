@@ -23,5 +23,5 @@ class EbookVoiceApiPage extends FormPage {
             .should('be.checked');
     } 
 }
-    const ebookVoiceApiPage = new EbookVoiceApiPage();
-    export default ebookVoiceApiPage;
+const ebookVoiceApiPage = new EbookVoiceApiPage();
+export default ebookVoiceApiPage;

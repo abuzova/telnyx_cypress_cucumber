@@ -24,8 +24,7 @@ class MissionControlPage extends AccordionPage {
 
     getImgBlock(i){
         return cy.get('section:nth-child(4)>div>div>div>div:nth-child('+ i +') picture img'); // 2, 3, 4, 5
-    }
-    
+    }    
 
     // How It Works block
 

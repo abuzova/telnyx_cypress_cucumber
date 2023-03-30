@@ -68,5 +68,5 @@ class PartnershipsPage extends FormPage {
         this.getAdditionalInformationInput().should('have.value', additionalInformatioValue);
     } 
 }
-    const partnershipsPage = new PartnershipsPage();
-    export default partnershipsPage;
+const partnershipsPage = new PartnershipsPage();
+export default partnershipsPage;

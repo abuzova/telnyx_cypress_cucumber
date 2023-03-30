@@ -20,7 +20,6 @@ Examples:
 | communications |     1       |  Communications |            3         | Identity                |           2              | Verify API              |  /products/verify-api                       |
 | communications |     1       |  Communications |            4         | Voice                   |           1              | SIP Trunking            |  /products/sip-trunks                       |
 | communications |     1       |  Communications |            4         | Voice                   |           2              | Voice API               |  /products/voice-api                        |
-#| communications |     1       |  Communications |            4         | Video                   |           1              | Video API               |  /products/video-api                        |
 | communications |     1       |  Communications |            5         | Fax                     |           1              | Fax API                 |  /products/fax-api                          |
 | communications |     1       |  Communications |            6         | Enterprise Integrations |           1              | Microsoft Teams         |  /products/enterprise-integrations-ms-teams |
 | wireless       |     2       |  Wireless       |            1         | IoT SIM Card            |           1              | IoT SIM Card            |  /products/iot-sim-card                     |
