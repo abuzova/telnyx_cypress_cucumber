@@ -5,7 +5,7 @@ Given I want to navigate to telnyx.com and close cookies pop-up window
 Given I want to go to the "Solutions" page
 
 
-Scenario Outline: I want to verify How it works block
+Scenario Outline: I want to verify <title_of_article> article of How it works block
 Given I want go to the "Account notifications" page
 When I am on the "Account notifications" page
 

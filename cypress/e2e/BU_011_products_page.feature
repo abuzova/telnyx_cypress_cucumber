@@ -5,7 +5,7 @@ Given I want to navigate to telnyx.com and close cookies pop-up window
 Given I want to go to the "See all products" page
 When I am on the "See all products" page
 
-Scenario: I want to validate links on the Products page
+Scenario: I want to validate link for <sub_sub_infrastr_name> block on the Products page
 Then Validate links on the Products page <infrastructure> <infrastr_i>, <sub_infrastructure> <sub_infrastructure_i>, <sub_sub_infrastr_name> <sub_sub_infrastructure_i> <sub_sub_infrastr_url> <idValue>
 Examples:
 | idValue        | infrastr_i  |  infrastructure | sub_infrastructure_i | sub_infrastructure      | sub_sub_infrastructure_i | sub_sub_infrastr_name   |  sub_sub_infrastr_url                       |

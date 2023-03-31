@@ -4,8 +4,8 @@ Background:
 Given I want to navigate to telnyx.com and close cookies pop-up window
 When I am on the "Home" page
 
-Scenario: I want to validate links of the footer menu items <i_element>
-Then Validate the links of the left footer menu item
+Scenario: I want to validate links of the left footer menu item
+Then Validate links of the left footer menu item
 | links_menu_item_left_footer                |  i_element   |     
 | https://telnyx.com/company/data-privacy    |      1       |
 | https://telnyx.com/report-abuse            |      2       |
@@ -14,7 +14,8 @@ Then Validate the links of the left footer menu item
 | https://telnyx.com/law-enforcement-request |      5       |
 | https://telnyx.com/acceptable-use-policy   |      6       |   
 
-Then Validate the links of the right footer menu item
+Scenario: I want to validate links of the right footer menu item
+Then Validate links of the right footer menu item
 | links_menu_item_right_footer               |  i_element   |
 | https://telnyx.com/terms-and-conditions    |      1       |
 | https://telnyx.com/release-notes           |      2       |

@@ -11,12 +11,12 @@ When('I am on the "Home" page', () => {
     cy.url().should('eq', 'https://telnyx.com/');
 });
 
-Then("Validate the links of the left footer menu item", (datatable) => {
+Then("Validate links of the left footer menu item", (datatable) => {
     datatable.hashes().forEach((element) => {
         footerPage.validateLeftFooterMenuItem(element.links_menu_item_left_footer, element.i_element);
     });
 });
-Then("Validate the links of the right footer menu item", (datatable) => {
+Then("Validate links of the right footer menu item", (datatable) => {
     datatable.hashes().forEach((element) => {
         footerPage.validateRightFooterMenuItem(element.links_menu_item_right_footer, element.i_element);
     });

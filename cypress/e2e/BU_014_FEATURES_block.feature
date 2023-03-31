@@ -11,7 +11,7 @@ Then Validate FEATURES title block data
     | number |  title_of_article                            |  describe_of_article                                                                                                                                                                                      |        
     |   1    |  Powerful voice API features out of the box  |  Build programmable voice applications like you would build a web app—simple HTTP commands or XML scripting unlocks a toolkit of features including call flow control, recordings, conferencing and more. | 
 
-Scenario Outline: I want to validate FEATURES block        
+Scenario Outline: I want to validate <title_of_article> article of FEATURES block        
 Then Validate FEATURES subblock data. Number: '<number>', title of the article: '<title_of_article>', description of the article: '<describe_of_article>'
 Examples:
     | number |  title_of_article                            |  describe_of_article                                                                                                                |        
